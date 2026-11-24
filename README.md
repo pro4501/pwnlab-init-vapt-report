@@ -288,6 +288,18 @@ A chain of common, well-understood web and Linux misconfigurations allowed full 
 - MITRE CWE: CWE-78, CWE-94, CWE-98, CWE-326, CWE-426, CWE-434, CWE-522, CWE-798
 - PTES — Penetration Testing Execution Standard
 
+## Appendix C — Proof of Exploitation (lab screenshots)
+
+**Reconnaissance — `nmap -Pn -sV` against the target** (ports 80 / 111 / 3306):
+
+![nmap service scan of PwnLab target](screenshots/01-recon-nmap.jpg)
+
+**Credential disclosure — MySQL `users` table dumped with the recovered DB root password**, showing the Base64-encoded passwords for kent / mike / kane (findings F-02, F-03):
+
+![MySQL users table with base64 passwords](screenshots/02-mysql-credentials.jpg)
+
+*Captured live from the isolated lab.*
+
 ---
 
 *Prepared as a personal skills-development write-up. Conducted entirely within an isolated, self-owned lab environment.*
